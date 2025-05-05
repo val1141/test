@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Query Logger</title>
+</head>
+<body>
+  <h1>Query Parameters</h1>
+  <pre id="output">Loading...</pre>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const output = {};
+
+    for (const [key, value] of params.entries()) {
+      output[key] = value;
+    }
+
+    document.getElementById('output').textContent = JSON.stringify(output, null, 2);
+  </script>
+</body>
+</html>
